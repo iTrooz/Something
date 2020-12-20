@@ -1,14 +1,10 @@
-//
-// Created by itrooz on 19/12/2020.
-//
-
 #ifndef TEST_TEST_H
 #define TEST_TEST_H
 
+//#include "iostream"
 
-class test {
-
-};
-
+void test(){
+//	cout << "hey" << endl;
+}
 
 #endif //TEST_TEST_H
