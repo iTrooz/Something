@@ -3,5 +3,5 @@ project(Test)
 
 set(CMAKE_CXX_STANDARD 17)
 
-file( GLOB SOURCES src/*.cpp )
-add_executable(Test ${SOURCES} src/main.cpp src/main.h)
+file( GLOB SOURCES src/*.cpp)
+add_executable(Test ${SOURCES})
