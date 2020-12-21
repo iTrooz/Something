@@ -89,9 +89,10 @@ int wait_for_syscall(pid_t child) {
         ptrace(PTRACE_SYSCALL, child, 0, 0);
         int a = waitpid(-1, &status, __WALL);
         if(a!=child)cout << "OK!!!!!!!!!!!!!!!" << endl;
-        if (WIFSTOPPED(status) && WSTOPSIG(status) & 0x80)
+        if (WIFSTOPPED(status) && WSTOPSIG(status) & 0x80){
             return 0;
-        if (WIFEXITED(status))
+        }if (WIFEXITED(status)){
              return 1;
+        }
     }
 }
