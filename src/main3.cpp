@@ -19,7 +19,8 @@ using namespace std;
 int do_child(int argc, char **argv);
 
 [[noreturn]] int do_trace(pid_t child);
-int wait_for_syscall(pid_t child, pid_t& stopped);
+int wait_for_syscall(pid_t who, pid_t& stopped);
+int PRINCIPAL;
 
 int main(int argc, char **argv) {
 	char* a[] = {"./Test", "./threaded", NULL};
@@ -36,6 +37,7 @@ int main(int argc, char **argv) {
         return do_child(argc-1, argv+1);
     } else {
 		cout << "child pid : " << child << endl;
+		PRINCIPAL = child;
         return do_trace(child);
     }
 }
@@ -49,22 +51,23 @@ int do_child(int argc, char **argv) {
     return execvp(args[0], args);
 }
 
-[[noreturn]] int do_trace(pid_t child) {
+int do_trace(pid_t tracee) {
     int status, syscall, retval, stopped;
 	set<pid_t> traced;
-	traced.insert(child);
+	traced.insert(tracee);
 
-    waitpid(child, &status, 0);
-    status = ptrace(PTRACE_SETOPTIONS, child, 0, PTRACE_O_TRACESYSGOOD);
-    if(status!=0)cout << "failed : " << status << endl;
+    waitpid(tracee, &status, 0);
+    status = ptrace(PTRACE_SETOPTIONS, tracee, 0, PTRACE_O_TRACESYSGOOD|PTRACE_O_TRACECLONE|PTRACE_O_TRACEFORK);
+    if(status!=0)cout << "PTRACE_SETOPTIONS failed : " << status << endl;
+	status = ptrace(PTRACE_SYSCALL, tracee, 0, 0); // restart le thread + l'arrête au prochain syscall
+    if(status!=0)cout << "FIRST PTRACE_SYSCALL failed : " << status << endl;
 
-    int i=0;
     while(true) {
     	flush(cout);
     	cout << "------------" << endl;
 		cout << "a" << endl;
 
-        if (wait_for_syscall(child, stopped) != 0) {
+        if (wait_for_syscall(-1, stopped) != 0) {
         	if(traced.erase(stopped)==0){
         		cout << "Caught invalid child : " << stopped << endl;
 			}else{
@@ -73,9 +76,13 @@ int do_child(int argc, char **argv) {
         	}
         }
 
-        syscall = ptrace(PTRACE_PEEKUSER, stopped, sizeof(long)*ORIG_RAX);
+        status = syscall = ptrace(PTRACE_PEEKUSER, stopped, sizeof(long)*ORIG_RAX);
+		if(status!=0)cout << "failed : " << status << endl;
 		cout << "--" << endl;
-        if (wait_for_syscall(child, stopped) != 0){
+
+		status = ptrace(PTRACE_SYSCALL, stopped, 0, 0); // restart le thread + l'arrête au prochain syscall
+		if(status!=0)cout << "failed : " << status << endl;
+        if (wait_for_syscall(stopped, stopped) != 0){
 			if(traced.erase(stopped)==0){
 				cout << "Caught invalid child : " << stopped << endl;
 			}else{
@@ -83,55 +90,48 @@ int do_child(int argc, char **argv) {
 				if(traced.empty())break;
 			}
         }
+
         retval = ptrace(PTRACE_PEEKUSER, stopped, sizeof(long)*RAX);
 		cout << "---" << endl;
-    	cout << syscall << endl;
+    	cout << syscall << "->" << retval << endl;
 
 		if(syscall==56) {
-			cout << "clone detected" << endl;
 			pid_t new_child = retval;
 			cout << "created subprocess " << new_child << endl;
 			int exists = access(("/proc/" + to_string(new_child)).c_str(), 0);
 			cout << "exists : " << exists << endl;
-//			if(exists==0) {
-//				traced.insert(new_child);
-//				ptrace(PTRACE_CONT, new_child, 0, 0);
-//			}
+			if(exists==0) {
+				traced.insert(new_child);
+				status = ptrace(PTRACE_SYSCALL, new_child, 0, 0); // restart le thread + l'arrête au prochain syscall
+				if(status!=0)cout << "failed : " << status << endl;
+			}
 		}
 
 
-	//			status = ptrace(PTRACE_ATTACH, retval, 0, 0);
-	//			if(status!=0)cout << "PTRACE_ATTACH failed on " << retval << " : " << status << endl;
-	//			kill(retval, SIGSTOP);
-	//			waitpid(retval, &status, 0);
-	//			status = ptrace(PTRACE_SETOPTIONS, retval, 0, PTRACE_O_TRACESYSGOOD);
-	//			if(status!=0)cout << "PTRACE_SETOPTIONS failed on " << retval << " : " << status << endl;
-	//			else cout << "ptraced child " << retval << endl;
-	//
-	////			string s = explain_ptrace(PTRACE_SETOPTIONS, retval, 0, (void *) PTRACE_O_TRACESYSGOOD);
-	////			cout << s << endl;
-	//
-
-		i++;
+		status=ptrace(PTRACE_SYSCALL, stopped, 0, 0); // restart le thread + l'arrête au prochain syscall
+		if(status!=0)cout << "failed : " << status << endl;
     }
+    cout << "out of loop" << endl;
     return 0;
 }
 
-int wait_for_syscall(pid_t child, pid_t& stopped) {
+int wait_for_syscall(pid_t who, pid_t& stopped) {
     int status;
     while (true) {
-        ptrace(PTRACE_SYSCALL, child, 0, 0); // restart le child
-        stopped = waitpid(-1, &status, __WALL);
+        stopped = waitpid(who, &status, __WALL);
 
-        if(stopped != child)cout << "OK!!!!!!!!!!!!!!! " << stopped << endl;
+        if(stopped != PRINCIPAL)cout << "OK!!!!!!!!!!!!!!! " << stopped << endl;
 		if(((status >> 16) & 0xffff) == PTRACE_EVENT_CLONE){
 			cout << "CLONE SIGNAL" << endl;
 		}
         if (WIFSTOPPED(status) && WSTOPSIG(status) & 0x80){
             return 0;
-        }if (WIFEXITED(status)){
+        }
+        if (WIFEXITED(status)){
         	cout << "exit" << endl;
             return 1;
         }
+		status=ptrace(PTRACE_SYSCALL, stopped, 0, 0); // restart le thread + l'arrête au prochain syscall
+		if(status!=0)cout << "failed : " << status << endl;
     }
 }
