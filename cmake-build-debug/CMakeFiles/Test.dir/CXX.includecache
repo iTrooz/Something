@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/itrooz/moi/workspaces/CLion/Test/src/main3.cpp
+sys/ptrace.h
+-
+sys/reg.h
+-
+sys/wait.h
+-
+sys/types.h
+-
+unistd.h
+-
+stdlib.h
+-
+stdio.h
+-
+errno.h
+-
+string.h
+-
+iostream
+-
+thread
+-
+libexplain/ptrace.h
+-
+vector
+-
+set
+-
+
