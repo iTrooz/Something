@@ -22,7 +22,7 @@ int do_child(int argc, char **argv);
 int wait_for_syscall(pid_t child, pid_t& stopped);
 
 int main(int argc, char **argv) {
-	char* a[] = {"./Test", "./threaded-ex", NULL};
+	char* a[] = {"./Test", "./threaded", NULL};
 	argv = a;
 	argc = 2;
     if (argc < 2) {
@@ -55,14 +55,13 @@ int do_child(int argc, char **argv) {
 	traced.insert(child);
 
     waitpid(child, &status, 0);
-    status = ptrace(PTRACE_SETOPTIONS, child, 0, PTRACE_O_TRACESYSGOOD|PTRACE_O_TRACEFORK|PTRACE_O_TRACECLONE);
+    status = ptrace(PTRACE_SETOPTIONS, child, 0, PTRACE_O_TRACESYSGOOD);
     if(status!=0)cout << "failed : " << status << endl;
-	ptrace(PTRACE_CONT, child, NULL, NULL);
 
     int i=0;
     while(true) {
     	flush(cout);
-    	cout << endl;
+    	cout << "------------" << endl;
 		cout << "a" << endl;
 
         if (wait_for_syscall(child, stopped) != 0) {
@@ -75,7 +74,7 @@ int do_child(int argc, char **argv) {
         }
 
         syscall = ptrace(PTRACE_PEEKUSER, stopped, sizeof(long)*ORIG_RAX);
-    	cout << "b" << endl;
+		cout << "--" << endl;
         if (wait_for_syscall(child, stopped) != 0){
 			if(traced.erase(stopped)==0){
 				cout << "Caught invalid child : " << stopped << endl;
@@ -84,13 +83,13 @@ int do_child(int argc, char **argv) {
 				if(traced.empty())break;
 			}
         }
-    	cout << "c" << endl;
         retval = ptrace(PTRACE_PEEKUSER, stopped, sizeof(long)*RAX);
+		cout << "---" << endl;
     	cout << syscall << endl;
 
 		if(syscall==56) {
 			cout << "clone detected" << endl;
-			pid_t new_child = stopped;
+			pid_t new_child = retval;
 			cout << "created subprocess " << new_child << endl;
 			int exists = access(("/proc/" + to_string(new_child)).c_str(), 0);
 			cout << "exists : " << exists << endl;
@@ -113,7 +112,6 @@ int do_child(int argc, char **argv) {
 	////			cout << s << endl;
 	//
 
-		ptrace(PTRACE_CONT, child, NULL, NULL);
 		i++;
     }
     return 0;
@@ -122,7 +120,7 @@ int do_child(int argc, char **argv) {
 int wait_for_syscall(pid_t child, pid_t& stopped) {
     int status;
     while (true) {
-        ptrace(PTRACE_SYSCALL, child, 0, 0);
+        ptrace(PTRACE_SYSCALL, child, 0, 0); // restart le child
         stopped = waitpid(-1, &status, __WALL);
 
         if(stopped != child)cout << "OK!!!!!!!!!!!!!!! " << stopped << endl;
