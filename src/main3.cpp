@@ -76,12 +76,12 @@ int do_trace(pid_t tracee) {
         	}
         }
 
-        status = syscall = ptrace(PTRACE_PEEKUSER, stopped, sizeof(long)*ORIG_RAX);
-		if(status!=0)cout << "failed : " << status << endl;
-		cout << "--" << endl;
+        syscall = ptrace(PTRACE_PEEKUSER, stopped, sizeof(long)*ORIG_RAX);
+		cout << "-- " << syscall << " " << stopped << endl;
 
 		status = ptrace(PTRACE_SYSCALL, stopped, 0, 0); // restart le thread + l'arrête au prochain syscall
 		if(status!=0)cout << "failed : " << status << endl;
+
         if (wait_for_syscall(stopped, stopped) != 0){
 			if(traced.erase(stopped)==0){
 				cout << "Caught invalid child : " << stopped << endl;
@@ -93,9 +93,11 @@ int do_trace(pid_t tracee) {
 
         retval = ptrace(PTRACE_PEEKUSER, stopped, sizeof(long)*RAX);
 		cout << "---" << endl;
-    	cout << syscall << "->" << retval << endl;
+		if(status!=0)cout << "failed : " << status << endl;
+    	cout << stopped << "|" << syscall << "->" << retval << endl;
 
 		if(syscall==56) {
+			if(status!=0)cout << "failed : " << status << endl;
 			pid_t new_child = retval;
 			cout << "created subprocess " << new_child << endl;
 			int exists = access(("/proc/" + to_string(new_child)).c_str(), 0);
@@ -103,7 +105,10 @@ int do_trace(pid_t tracee) {
 			if(exists==0) {
 				traced.insert(new_child);
 				status = ptrace(PTRACE_SYSCALL, new_child, 0, 0); // restart le thread + l'arrête au prochain syscall
-				if(status!=0)cout << "failed : " << status << endl;
+				if(status!=0){
+					cout << "failed : " << status << endl;
+					cout << explain_ptrace(PTRACE_SYSCALL, new_child, 0, 0) << endl;
+				}
 			}
 		}
 
