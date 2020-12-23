@@ -73,11 +73,12 @@ int do_trace(pid_t tracee) {
 			}else{
         		cout << "child " << stopped << " exited" << endl;
         		if(traced.empty())break;
+        		else continue;
         	}
         }
 
         syscall = ptrace(PTRACE_PEEKUSER, stopped, sizeof(long)*ORIG_RAX);
-		cout << "-- " << syscall << " " << stopped << endl;
+		cout << "-- " << stopped << "|" << syscall << endl;
 
 		status = ptrace(PTRACE_SYSCALL, stopped, 0, 0); // restart le thread + l'arrête au prochain syscall
 		if(status!=0)cout << "failed : " << status << endl;
@@ -88,6 +89,7 @@ int do_trace(pid_t tracee) {
 			}else{
 				cout << "child " << stopped << " exited" << endl;
 				if(traced.empty())break;
+				else continue;
 			}
         }
 
@@ -108,14 +110,6 @@ int do_trace(pid_t tracee) {
 					cout << "failed : " << status << endl;
 					cout << explain_ptrace(PTRACE_SYSCALL, new_child, 0, 0) << endl;
 				}
-			}
-		}
-		if(syscall==280||syscall==1) {
-			if(traced.erase(stopped)==0){
-				cout << "Caught invalid child : " << stopped << endl;
-			}else{
-				cout << "child " << stopped << " exited" << endl;
-				if(traced.empty())break;
 			}
 		}
 
@@ -145,7 +139,7 @@ int wait_for_syscall(pid_t who, pid_t& stopped) {
             return 0;
         }
         if (WIFEXITED(status)){
-        	cout << "violent exit" << endl;
+        	cout << "exit" << endl;
             return 1;
         }
 		status=ptrace(PTRACE_SYSCALL, stopped, 0, 0); // restart le thread + l'arrête au prochain syscall
