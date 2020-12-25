@@ -22,24 +22,35 @@ int do_child(int argc, char **argv);
 int wait_for_syscall(pid_t who, pid_t& stopped);
 int PRINCIPAL;
 
+void go();
+
 int main(int argc, char **argv) {
-	char* a[] = {"./Test", "./threaded", NULL};
-	argv = a;
-	argc = 2;
-    if (argc < 2) {
-        fprintf(stderr, "Usage: %s prog args\n", argv[0]);
-        exit(1);
-    }
+//	char* a[] = {"./Test", "./threaded", NULL};
+//	argv = a;
+//	argc = 2;
+//    if (argc < 2) {
+//        fprintf(stderr, "Usage: %s prog args\n", argv[0]);
+//        exit(1);
+//    }
 
 	cout << "current pid : " << getpid() << endl;
-    pid_t child = fork();
-    if (child == 0) {
-        return do_child(argc-1, argv+1);
-    } else {
+
+	thread thr(&go);
+
+	thr.join();
+}
+
+void go() {
+	cout << "thread pid : " << getpid() << endl;
+	pid_t child = fork();
+	if (child == 0) {
+		char *a[] = {"./threaded", NULL};
+		do_child(1, a);
+	} else {
 		cout << "child pid : " << child << endl;
 		PRINCIPAL = child;
-        return do_trace(child);
-    }
+		do_trace(child);
+	}
 }
 
 int do_child(int argc, char **argv) {
