@@ -77,27 +77,27 @@ include CMakeFiles/Test.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Test.dir/flags.make
 
-CMakeFiles/Test.dir/src/main3.cpp.o: CMakeFiles/Test.dir/flags.make
-CMakeFiles/Test.dir/src/main3.cpp.o: ../src/main3.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/itrooz/moi/workspaces/CLion/Test/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Test.dir/src/main3.cpp.o"
-	clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Test.dir/src/main3.cpp.o -c /home/itrooz/moi/workspaces/CLion/Test/src/main3.cpp
+CMakeFiles/Test.dir/src/main5.cpp.o: CMakeFiles/Test.dir/flags.make
+CMakeFiles/Test.dir/src/main5.cpp.o: ../src/main5.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/itrooz/moi/workspaces/CLion/Test/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Test.dir/src/main5.cpp.o"
+	clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Test.dir/src/main5.cpp.o -c /home/itrooz/moi/workspaces/CLion/Test/src/main5.cpp
 
-CMakeFiles/Test.dir/src/main3.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Test.dir/src/main3.cpp.i"
-	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/itrooz/moi/workspaces/CLion/Test/src/main3.cpp > CMakeFiles/Test.dir/src/main3.cpp.i
+CMakeFiles/Test.dir/src/main5.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Test.dir/src/main5.cpp.i"
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/itrooz/moi/workspaces/CLion/Test/src/main5.cpp > CMakeFiles/Test.dir/src/main5.cpp.i
 
-CMakeFiles/Test.dir/src/main3.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Test.dir/src/main3.cpp.s"
-	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/itrooz/moi/workspaces/CLion/Test/src/main3.cpp -o CMakeFiles/Test.dir/src/main3.cpp.s
+CMakeFiles/Test.dir/src/main5.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Test.dir/src/main5.cpp.s"
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/itrooz/moi/workspaces/CLion/Test/src/main5.cpp -o CMakeFiles/Test.dir/src/main5.cpp.s
 
 # Object files for target Test
 Test_OBJECTS = \
-"CMakeFiles/Test.dir/src/main3.cpp.o"
+"CMakeFiles/Test.dir/src/main5.cpp.o"
 
 # External object files for target Test
 Test_EXTERNAL_OBJECTS =
 
-Test: CMakeFiles/Test.dir/src/main3.cpp.o
+Test: CMakeFiles/Test.dir/src/main5.cpp.o
 Test: CMakeFiles/Test.dir/build.make
 Test: CMakeFiles/Test.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/itrooz/moi/workspaces/CLion/Test/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Test"

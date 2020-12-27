@@ -6,33 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/itrooz/moi/workspaces/CLion/Test/src/main3.cpp
-sys/ptrace.h
--
-sys/reg.h
--
-sys/wait.h
--
-sys/types.h
--
-unistd.h
--
-stdlib.h
--
-stdio.h
--
-errno.h
--
-string.h
--
+/home/itrooz/moi/workspaces/CLion/Test/src/main5.cpp
 iostream
 -
-thread
+cstdlib
 -
-libexplain/ptrace.h
--
-vector
--
-set
+unistd.h
 -
 
