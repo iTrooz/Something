@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/itrooz/moi/workspaces/CLion/Test/src/ministrace.c
+sys/ptrace.h
+-
+bits/types.h
+-
+sys/user.h
+-
+sys/wait.h
+-
+sys/types.h
+-
+unistd.h
+-
+stdlib.h
+-
+stdio.h
+-
+errno.h
+-
+assert.h
+-
+string.h
+-
+syscalls.h
+/home/itrooz/moi/workspaces/CLion/Test/src/syscalls.h
+syscallents.h
+/home/itrooz/moi/workspaces/CLion/Test/src/syscallents.h
+
+/home/itrooz/moi/workspaces/CLion/Test/src/syscallents.h
+
+/home/itrooz/moi/workspaces/CLion/Test/src/syscalls.h
+

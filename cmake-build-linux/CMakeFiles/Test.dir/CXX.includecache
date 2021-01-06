@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/itrooz/moi/workspaces/CLion/Test/src/main.cpp
+sys/ptrace.h
+-
+sys/reg.h
+-
+sys/wait.h
+-
+iostream
+-
+cstdlib
+-
+unistd.h
+-
+proc_service.h
+-
+

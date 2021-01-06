@@ -1,0 +1,4 @@
+/snap/clion/138/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=/usr/bin/mingw32-gcc -DCMAKE_CXX_COMPILER=/usr/bin/mingw32-g++ -G "CodeBlocks - Unix Makefiles" /home/itrooz/moi/workspaces/CLion/Test
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows

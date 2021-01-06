@@ -1,0 +1,3 @@
+/home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/rebuild_cache.dir
+/home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/edit_cache.dir
+/home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/Test.dir

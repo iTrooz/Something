@@ -1,0 +1,110 @@
+The system is: Linux - 5.8.18-1-MANJARO - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/mingw32-gcc 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
+
+The C compiler identification is GNU, found in "/home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/3.17.3/CompilerIdC/a.exe"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /usr/bin/mingw32-g++ 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
+
+The CXX compiler identification is GNU, found in "/home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/3.17.3/CompilerIdCXX/a.exe"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_78e9c/fast && /usr/bin/make  -f CMakeFiles/cmTC_78e9c.dir/build.make CMakeFiles/cmTC_78e9c.dir/build
+make[1] : on entre dans le répertoire « /home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_78e9c.dir/testCCompiler.c.o
+/usr/bin/mingw32-gcc    -o CMakeFiles/cmTC_78e9c.dir/testCCompiler.c.o   -c /home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_78e9c
+/var/lib/snapd/snap/clion/137/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_78e9c.dir/link.txt --verbose=1
+/usr/bin/mingw32-gcc      CMakeFiles/cmTC_78e9c.dir/testCCompiler.c.o  -o cmTC_78e9c 
+make[1] : on quitte le répertoire « /home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/CMakeTmp »
+
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_2bb0c/fast && /usr/bin/make  -f CMakeFiles/cmTC_2bb0c.dir/build.make CMakeFiles/cmTC_2bb0c.dir/build
+make[1] : on entre dans le répertoire « /home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/CMakeTmp »
+Building CXX object CMakeFiles/cmTC_2bb0c.dir/testCXXCompiler.cxx.o
+/usr/bin/mingw32-g++     -o CMakeFiles/cmTC_2bb0c.dir/testCXXCompiler.cxx.o -c /home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_2bb0c
+/var/lib/snapd/snap/clion/137/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2bb0c.dir/link.txt --verbose=1
+/usr/bin/mingw32-g++       CMakeFiles/cmTC_2bb0c.dir/testCXXCompiler.cxx.o  -o cmTC_2bb0c 
+make[1] : on quitte le répertoire « /home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/CMakeTmp »
+
+
+
+The system is: Linux - 5.10.2-2-MANJARO - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/mingw32-gcc 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
+
+The C compiler identification is GNU, found in "/home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/3.17.5/CompilerIdC/a.exe"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /usr/bin/mingw32-g++ 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
+
+The CXX compiler identification is GNU, found in "/home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/3.17.5/CompilerIdCXX/a.exe"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_b1403/fast && /usr/bin/make  -f CMakeFiles/cmTC_b1403.dir/build.make CMakeFiles/cmTC_b1403.dir/build
+make[1] : on entre dans le répertoire « /home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_b1403.dir/testCCompiler.c.o
+/usr/bin/mingw32-gcc    -o CMakeFiles/cmTC_b1403.dir/testCCompiler.c.o   -c /home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_b1403
+/var/lib/snapd/snap/clion/138/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b1403.dir/link.txt --verbose=1
+/usr/bin/mingw32-gcc      CMakeFiles/cmTC_b1403.dir/testCCompiler.c.o  -o cmTC_b1403 
+make[1] : on quitte le répertoire « /home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/CMakeTmp »
+
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_d925c/fast && /usr/bin/make  -f CMakeFiles/cmTC_d925c.dir/build.make CMakeFiles/cmTC_d925c.dir/build
+make[1] : on entre dans le répertoire « /home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/CMakeTmp »
+Building CXX object CMakeFiles/cmTC_d925c.dir/testCXXCompiler.cxx.o
+/usr/bin/mingw32-g++     -o CMakeFiles/cmTC_d925c.dir/testCXXCompiler.cxx.o -c /home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_d925c
+/var/lib/snapd/snap/clion/138/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d925c.dir/link.txt --verbose=1
+/usr/bin/mingw32-g++       CMakeFiles/cmTC_d925c.dir/testCXXCompiler.cxx.o  -o cmTC_d925c 
+make[1] : on quitte le répertoire « /home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/CMakeTmp »
+
+
+

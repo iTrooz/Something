@@ -1,0 +1,274 @@
+Detecting C compiler ABI info failed to compile with the following output:
+Change Dir: /home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_cb94e/fast && /usr/bin/make  -f CMakeFiles/cmTC_cb94e.dir/build.make CMakeFiles/cmTC_cb94e.dir/build
+make[1]: Entering directory '/home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cb94e.dir/CMakeCCompilerABI.c.o
+/usr/bin/mingw32-gcc   -v -o CMakeFiles/cmTC_cb94e.dir/CMakeCCompilerABI.c.o   -c /var/lib/snapd/snap/clion/137/bin/cmake/linux/share/cmake-3.17/Modules/CMakeCCompilerABI.c
+Using built-in specs.
+COLLECT_GCC=/usr/bin/mingw32-gcc
+Target: x86_64-w64-mingw32
+Configured with: /build/mingw-w64-gcc/src/gcc/configure --prefix=/usr --libexecdir=/usr/lib --target=x86_64-w64-mingw32 --with-bugurl=https://bugs.archlinux.org/ --enable-languages=c,lto,c++,ada,objc,obj-c++,fortran --enable-shared --enable-static --enable-threads=posix --enable-fully-dynamic-string --enable-libstdcxx-time=yes --enable-libstdcxx-filesystem-ts=yes --with-system-zlib --enable-cloog-backend=isl --enable-lto --enable-libgomp --disable-multilib --enable-checking=release --disable-sjlj-exceptions --with-dwarf2
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 10.2.0 (GCC) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_cb94e.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/cc1 -quiet -v -D_REENTRANT /var/lib/snapd/snap/clion/137/bin/cmake/linux/share/cmake-3.17/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_cb94e.dir/CMakeCCompilerABI.c.o -version -o /tmp/ccn2KlN2.s
+GNU C17 (GCC) version 10.2.0 (x86_64-w64-mingw32)
+	compiled by GNU C version 10.2.0, GMP version 6.2.0, MPFR version 4.1.0, MPC version 1.1.0, isl version isl-0.21-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/sys-include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/include
+ /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/include-fixed
+ /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/include
+End of search list.
+GNU C17 (GCC) version 10.2.0 (x86_64-w64-mingw32)
+	compiled by GNU C version 10.2.0, GMP version 6.2.0, MPFR version 4.1.0, MPC version 1.1.0, isl version isl-0.21-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: e25804eba086f6aff8229be247419825
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_cb94e.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/bin/as -v -o CMakeFiles/cmTC_cb94e.dir/CMakeCCompilerABI.c.o /tmp/ccn2KlN2.s
+GNU assembler version 2.35.1 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.35.1
+COMPILER_PATH=/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/bin/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/lib/../lib/:/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_cb94e.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+Linking C executable cmTC_cb94e
+/var/lib/snapd/snap/clion/137/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cb94e.dir/link.txt --verbose=1
+/usr/bin/mingw32-gcc     -v CMakeFiles/cmTC_cb94e.dir/CMakeCCompilerABI.c.o  -o cmTC_cb94e 
+Using built-in specs.
+COLLECT_GCC=/usr/bin/mingw32-gcc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/lto-wrapper
+Target: x86_64-w64-mingw32
+Configured with: /build/mingw-w64-gcc/src/gcc/configure --prefix=/usr --libexecdir=/usr/lib --target=x86_64-w64-mingw32 --with-bugurl=https://bugs.archlinux.org/ --enable-languages=c,lto,c++,ada,objc,obj-c++,fortran --enable-shared --enable-static --enable-threads=posix --enable-fully-dynamic-string --enable-libstdcxx-time=yes --enable-libstdcxx-filesystem-ts=yes --with-system-zlib --enable-cloog-backend=isl --enable-lto --enable-libgomp --disable-multilib --enable-checking=release --disable-sjlj-exceptions --with-dwarf2
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 10.2.0 (GCC) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/bin/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/lib/../lib/:/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_cb94e.exe' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/collect2 -plugin /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cc4lIDvp.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -m i386pep -Bdynamic -o cmTC_cb94e.exe /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/crtbegin.o -L/usr/lib/gcc/x86_64-w64-mingw32/10.2.0 -L/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/lib/../lib -L/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/lib CMakeFiles/cmTC_cb94e.dir/CMakeCCompilerABI.c.o -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/crtend.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_cb94e.exe' '-mtune=generic' '-march=x86-64'
+make[1]: Leaving directory '/home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/CMakeTmp'
+
+
+Cannot copy output executable
+  ''
+to destination specified by COPY_FILE:
+  '/home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/3.17.3/CMakeDetermineCompilerABI_C.bin'
+Unable to find the executable at any of:
+  /home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/CMakeTmp/cmTC_cb94e
+  /home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/CMakeTmp/Debug/cmTC_cb94e
+  /home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/CMakeTmp/Development/cmTC_cb94e
+
+
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: /home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_80dec/fast && /usr/bin/make  -f CMakeFiles/cmTC_80dec.dir/build.make CMakeFiles/cmTC_80dec.dir/build
+make[1]: Entering directory '/home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_80dec.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/mingw32-g++    -v -o CMakeFiles/cmTC_80dec.dir/CMakeCXXCompilerABI.cpp.o -c /var/lib/snapd/snap/clion/137/bin/cmake/linux/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp
+Using built-in specs.
+COLLECT_GCC=/usr/bin/mingw32-g++
+Target: x86_64-w64-mingw32
+Configured with: /build/mingw-w64-gcc/src/gcc/configure --prefix=/usr --libexecdir=/usr/lib --target=x86_64-w64-mingw32 --with-bugurl=https://bugs.archlinux.org/ --enable-languages=c,lto,c++,ada,objc,obj-c++,fortran --enable-shared --enable-static --enable-threads=posix --enable-fully-dynamic-string --enable-libstdcxx-time=yes --enable-libstdcxx-filesystem-ts=yes --with-system-zlib --enable-cloog-backend=isl --enable-lto --enable-libgomp --disable-multilib --enable-checking=release --disable-sjlj-exceptions --with-dwarf2
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 10.2.0 (GCC) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_80dec.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/cc1plus -quiet -v -D_REENTRANT /var/lib/snapd/snap/clion/137/bin/cmake/linux/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_80dec.dir/CMakeCXXCompilerABI.cpp.o -version -o /tmp/ccvzrvlK.s
+GNU C++14 (GCC) version 10.2.0 (x86_64-w64-mingw32)
+	compiled by GNU C version 10.2.0, GMP version 6.2.0, MPFR version 4.1.0, MPC version 1.1.0, isl version isl-0.21-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/sys-include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/include/c++/10.2.0
+ /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/include/c++/10.2.0/x86_64-w64-mingw32
+ /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/include/c++/10.2.0/backward
+ /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/include
+ /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/include-fixed
+ /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/include
+End of search list.
+GNU C++14 (GCC) version 10.2.0 (x86_64-w64-mingw32)
+	compiled by GNU C version 10.2.0, GMP version 6.2.0, MPFR version 4.1.0, MPC version 1.1.0, isl version isl-0.21-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: 40d471329f26caf49a555a1ef79dde5a
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_80dec.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/bin/as -v -o CMakeFiles/cmTC_80dec.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccvzrvlK.s
+GNU assembler version 2.35.1 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.35.1
+COMPILER_PATH=/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/bin/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/lib/../lib/:/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_80dec.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+Linking CXX executable cmTC_80dec
+/var/lib/snapd/snap/clion/137/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_80dec.dir/link.txt --verbose=1
+/usr/bin/mingw32-g++      -v CMakeFiles/cmTC_80dec.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_80dec 
+Using built-in specs.
+COLLECT_GCC=/usr/bin/mingw32-g++
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/lto-wrapper
+Target: x86_64-w64-mingw32
+Configured with: /build/mingw-w64-gcc/src/gcc/configure --prefix=/usr --libexecdir=/usr/lib --target=x86_64-w64-mingw32 --with-bugurl=https://bugs.archlinux.org/ --enable-languages=c,lto,c++,ada,objc,obj-c++,fortran --enable-shared --enable-static --enable-threads=posix --enable-fully-dynamic-string --enable-libstdcxx-time=yes --enable-libstdcxx-filesystem-ts=yes --with-system-zlib --enable-cloog-backend=isl --enable-lto --enable-libgomp --disable-multilib --enable-checking=release --disable-sjlj-exceptions --with-dwarf2
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 10.2.0 (GCC) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/bin/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/lib/../lib/:/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_80dec.exe' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/collect2 -plugin /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccbKmsE8.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -m i386pep -Bdynamic -o cmTC_80dec.exe /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/crtbegin.o -L/usr/lib/gcc/x86_64-w64-mingw32/10.2.0 -L/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/lib/../lib -L/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/lib CMakeFiles/cmTC_80dec.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/crtend.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_80dec.exe' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+make[1]: Leaving directory '/home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/CMakeTmp'
+
+
+Cannot copy output executable
+  ''
+to destination specified by COPY_FILE:
+  '/home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/3.17.3/CMakeDetermineCompilerABI_CXX.bin'
+Unable to find the executable at any of:
+  /home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/CMakeTmp/cmTC_80dec
+  /home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/CMakeTmp/Debug/cmTC_80dec
+  /home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/CMakeTmp/Development/cmTC_80dec
+
+
+Detecting C compiler ABI info failed to compile with the following output:
+Change Dir: /home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_53ad1/fast && /usr/bin/make  -f CMakeFiles/cmTC_53ad1.dir/build.make CMakeFiles/cmTC_53ad1.dir/build
+make[1]: Entering directory '/home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_53ad1.dir/CMakeCCompilerABI.c.o
+/usr/bin/mingw32-gcc   -v -o CMakeFiles/cmTC_53ad1.dir/CMakeCCompilerABI.c.o   -c /var/lib/snapd/snap/clion/138/bin/cmake/linux/share/cmake-3.17/Modules/CMakeCCompilerABI.c
+Using built-in specs.
+COLLECT_GCC=/usr/bin/mingw32-gcc
+Target: x86_64-w64-mingw32
+Configured with: /build/mingw-w64-gcc/src/gcc/configure --prefix=/usr --libexecdir=/usr/lib --target=x86_64-w64-mingw32 --with-bugurl=https://bugs.archlinux.org/ --enable-languages=c,lto,c++,ada,objc,obj-c++,fortran --enable-shared --enable-static --enable-threads=posix --enable-fully-dynamic-string --enable-libstdcxx-time=yes --enable-libstdcxx-filesystem-ts=yes --with-system-zlib --enable-cloog-backend=isl --enable-lto --enable-libgomp --disable-multilib --enable-checking=release --disable-sjlj-exceptions --with-dwarf2
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 10.2.0 (GCC) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_53ad1.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/cc1 -quiet -v -D_REENTRANT /var/lib/snapd/snap/clion/138/bin/cmake/linux/share/cmake-3.17/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_53ad1.dir/CMakeCCompilerABI.c.o -version -o /tmp/cc8pF2qQ.s
+GNU C17 (GCC) version 10.2.0 (x86_64-w64-mingw32)
+	compiled by GNU C version 10.2.0, GMP version 6.2.0, MPFR version 4.1.0, MPC version 1.1.0, isl version isl-0.21-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/sys-include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/include
+ /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/include-fixed
+ /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/include
+End of search list.
+GNU C17 (GCC) version 10.2.0 (x86_64-w64-mingw32)
+	compiled by GNU C version 10.2.0, GMP version 6.2.0, MPFR version 4.1.0, MPC version 1.1.0, isl version isl-0.21-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: e25804eba086f6aff8229be247419825
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_53ad1.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/bin/as -v -o CMakeFiles/cmTC_53ad1.dir/CMakeCCompilerABI.c.o /tmp/cc8pF2qQ.s
+GNU assembler version 2.35.1 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.35.1
+COMPILER_PATH=/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/bin/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/lib/../lib/:/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_53ad1.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+Linking C executable cmTC_53ad1
+/var/lib/snapd/snap/clion/138/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_53ad1.dir/link.txt --verbose=1
+/usr/bin/mingw32-gcc     -v CMakeFiles/cmTC_53ad1.dir/CMakeCCompilerABI.c.o  -o cmTC_53ad1 
+Using built-in specs.
+COLLECT_GCC=/usr/bin/mingw32-gcc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/lto-wrapper
+Target: x86_64-w64-mingw32
+Configured with: /build/mingw-w64-gcc/src/gcc/configure --prefix=/usr --libexecdir=/usr/lib --target=x86_64-w64-mingw32 --with-bugurl=https://bugs.archlinux.org/ --enable-languages=c,lto,c++,ada,objc,obj-c++,fortran --enable-shared --enable-static --enable-threads=posix --enable-fully-dynamic-string --enable-libstdcxx-time=yes --enable-libstdcxx-filesystem-ts=yes --with-system-zlib --enable-cloog-backend=isl --enable-lto --enable-libgomp --disable-multilib --enable-checking=release --disable-sjlj-exceptions --with-dwarf2
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 10.2.0 (GCC) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/bin/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/lib/../lib/:/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_53ad1.exe' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/collect2 -plugin /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccwUGcbA.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -m i386pep -Bdynamic -o cmTC_53ad1.exe /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/crtbegin.o -L/usr/lib/gcc/x86_64-w64-mingw32/10.2.0 -L/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/lib/../lib -L/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/lib CMakeFiles/cmTC_53ad1.dir/CMakeCCompilerABI.c.o -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/crtend.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_53ad1.exe' '-mtune=generic' '-march=x86-64'
+make[1]: Leaving directory '/home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/CMakeTmp'
+
+
+Cannot copy output executable
+  ''
+to destination specified by COPY_FILE:
+  '/home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/3.17.5/CMakeDetermineCompilerABI_C.bin'
+Unable to find the executable at any of:
+  /home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/CMakeTmp/cmTC_53ad1
+  /home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/CMakeTmp/Debug/cmTC_53ad1
+  /home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/CMakeTmp/Development/cmTC_53ad1
+
+
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: /home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_5137f/fast && /usr/bin/make  -f CMakeFiles/cmTC_5137f.dir/build.make CMakeFiles/cmTC_5137f.dir/build
+make[1]: Entering directory '/home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_5137f.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/mingw32-g++    -v -o CMakeFiles/cmTC_5137f.dir/CMakeCXXCompilerABI.cpp.o -c /var/lib/snapd/snap/clion/138/bin/cmake/linux/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp
+Using built-in specs.
+COLLECT_GCC=/usr/bin/mingw32-g++
+Target: x86_64-w64-mingw32
+Configured with: /build/mingw-w64-gcc/src/gcc/configure --prefix=/usr --libexecdir=/usr/lib --target=x86_64-w64-mingw32 --with-bugurl=https://bugs.archlinux.org/ --enable-languages=c,lto,c++,ada,objc,obj-c++,fortran --enable-shared --enable-static --enable-threads=posix --enable-fully-dynamic-string --enable-libstdcxx-time=yes --enable-libstdcxx-filesystem-ts=yes --with-system-zlib --enable-cloog-backend=isl --enable-lto --enable-libgomp --disable-multilib --enable-checking=release --disable-sjlj-exceptions --with-dwarf2
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 10.2.0 (GCC) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5137f.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/cc1plus -quiet -v -D_REENTRANT /var/lib/snapd/snap/clion/138/bin/cmake/linux/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_5137f.dir/CMakeCXXCompilerABI.cpp.o -version -o /tmp/cciniYaE.s
+GNU C++14 (GCC) version 10.2.0 (x86_64-w64-mingw32)
+	compiled by GNU C version 10.2.0, GMP version 6.2.0, MPFR version 4.1.0, MPC version 1.1.0, isl version isl-0.21-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/sys-include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/include/c++/10.2.0
+ /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/include/c++/10.2.0/x86_64-w64-mingw32
+ /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/include/c++/10.2.0/backward
+ /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/include
+ /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/include-fixed
+ /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/include
+End of search list.
+GNU C++14 (GCC) version 10.2.0 (x86_64-w64-mingw32)
+	compiled by GNU C version 10.2.0, GMP version 6.2.0, MPFR version 4.1.0, MPC version 1.1.0, isl version isl-0.21-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: 40d471329f26caf49a555a1ef79dde5a
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5137f.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/bin/as -v -o CMakeFiles/cmTC_5137f.dir/CMakeCXXCompilerABI.cpp.o /tmp/cciniYaE.s
+GNU assembler version 2.35.1 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.35.1
+COMPILER_PATH=/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/bin/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/lib/../lib/:/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5137f.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+Linking CXX executable cmTC_5137f
+/var/lib/snapd/snap/clion/138/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5137f.dir/link.txt --verbose=1
+/usr/bin/mingw32-g++      -v CMakeFiles/cmTC_5137f.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_5137f 
+Using built-in specs.
+COLLECT_GCC=/usr/bin/mingw32-g++
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/lto-wrapper
+Target: x86_64-w64-mingw32
+Configured with: /build/mingw-w64-gcc/src/gcc/configure --prefix=/usr --libexecdir=/usr/lib --target=x86_64-w64-mingw32 --with-bugurl=https://bugs.archlinux.org/ --enable-languages=c,lto,c++,ada,objc,obj-c++,fortran --enable-shared --enable-static --enable-threads=posix --enable-fully-dynamic-string --enable-libstdcxx-time=yes --enable-libstdcxx-filesystem-ts=yes --with-system-zlib --enable-cloog-backend=isl --enable-lto --enable-libgomp --disable-multilib --enable-checking=release --disable-sjlj-exceptions --with-dwarf2
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 10.2.0 (GCC) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/bin/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/lib/../lib/:/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_5137f.exe' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/collect2 -plugin /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cczljoCB.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -m i386pep -Bdynamic -o cmTC_5137f.exe /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/crtbegin.o -L/usr/lib/gcc/x86_64-w64-mingw32/10.2.0 -L/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/lib/../lib -L/usr/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/lib CMakeFiles/cmTC_5137f.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt /usr/lib/gcc/x86_64-w64-mingw32/10.2.0/crtend.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_5137f.exe' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+make[1]: Leaving directory '/home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/CMakeTmp'
+
+
+Cannot copy output executable
+  ''
+to destination specified by COPY_FILE:
+  '/home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/3.17.5/CMakeDetermineCompilerABI_CXX.bin'
+Unable to find the executable at any of:
+  /home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/CMakeTmp/cmTC_5137f
+  /home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/CMakeTmp/Debug/cmTC_5137f
+  /home/itrooz/moi/workspaces/CLion/Test/cmake-build-windows/CMakeFiles/CMakeTmp/Development/cmTC_5137f
+
+

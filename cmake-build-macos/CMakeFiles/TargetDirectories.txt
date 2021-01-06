@@ -1,0 +1,3 @@
+/home/itrooz/moi/workspaces/CLion/Test/cmake-build-macos/CMakeFiles/rebuild_cache.dir
+/home/itrooz/moi/workspaces/CLion/Test/cmake-build-macos/CMakeFiles/edit_cache.dir
+/home/itrooz/moi/workspaces/CLion/Test/cmake-build-macos/CMakeFiles/Test.dir

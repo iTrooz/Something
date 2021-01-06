@@ -1,0 +1,1 @@
+/usr/bin/mingw32-g++  -g   CMakeFiles/Test.dir/src/main.cpp.o  -o Test  -lpthread -lexplain 
