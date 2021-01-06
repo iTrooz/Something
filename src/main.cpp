@@ -49,22 +49,16 @@ void startTrace(pid_t mainProcess) { // TODO way to kill tracer ?
 		if (waitProcess(mainProcess))break;
 		// entry
 
-		info.op = PTRACE_SYSCALL_INFO_ENTRY;
-		ptrace(PTRACE_GET_SYSCALL_INFO, mainProcess, size, &info);
-		if(info.entry.nr==1){
-//			cout << endl << endl;
-//			cout << "call " << info.entry.nr << endl;
-//			cout << info.entry.args[0] << endl; // pipe = rbx
-//			cout << info.entry.args[1] << endl; // pointer = rcx
-//			cout << info.entry.args[2] << endl; // len = rdx
-//			cout << "-" << endl;
-			ptrace(PTRACE_GETREGS, mainProcess, 0, &regs);
-			regs.rdi = 2;
-//			cout << "REG = " << regs.rdi << endl;
-			ptrace(PTRACE_SETREGS, mainProcess, 0, &regs);
-//			temp = ptrace(PTRACE_PEEKUSER, mainProcess, sizeof(long)*RDI); // restart le thread + l'arrête au prochain syscall
-//			cout << "PEEK = " << temp << endl;
-		}
+//		info.op = PTRACE_SYSCALL_INFO_ENTRY;
+//		ptrace(PTRACE_GET_SYSCALL_INFO, mainProcess, size, &info);
+//		if(info.entry.nr==1){
+//			ptrace(PTRACE_GETREGS, mainProcess, 0, &regs);
+//			if(regs.rdi==1){
+//				regs.rdx -= 3;
+//				regs.rbx -= 3;
+//				ptrace(PTRACE_SETREGS, mainProcess, 0, &regs);
+//			}
+//		}
 
 		/*
 		 args[0] = pipe
@@ -81,22 +75,36 @@ void startTrace(pid_t mainProcess) { // TODO way to kill tracer ?
 
 		temp = ptrace(PTRACE_SYSCALL, mainProcess, 0, 0); // restart le thread + l'arrête au prochain syscall
 	}
-	cout << "CHILD EXITED" << endl;
+	cout << endl << "CHILD EXITED" << endl;
 }
 
-int main(){
+
+int do_child(int argc, char **argv) {
+	char *args [argc+1];
+	int i;
+	for (i=0;i<argc;i++)
+		args[i] = argv[i];
+	args[argc] = NULL;
+
+	ptrace(PTRACE_TRACEME);
+//	kill(getpid(), SIGSTOP);
+	cout << "go" << endl;
+	return execvp(args[0], args);
+}
+
+int main(int argc, char **argv) {
+	if (argc < 2) {
+		fprintf(stderr, "Usage: %s prog args\n", argv[0]);
+		exit(1);
+	}
 
 	pid_t child = fork();
 	if(child==0){
-		char* a[] = {"sudo", NULL};
-		char** b = a;
-		ptrace(PTRACE_TRACEME);
-		kill(getpid(), SIGSTOP);
-		int t = execvp(b[0], b);
-		cout << "AAA="<<t << endl;
-		throw runtime_error("NOT SUPPOSED TO HAPPEN : PROCESS ESCAPED"); // au cas ou
+		do_child(argc-1, argv+1);
+		cerr << "NOT SUPPOSED TO HAPPEN : PROCESS ESCAPED" << endl; // au cas ou
+		exit(1);
 	}else {
-		startTrace(child);
-//		sleep(2);
+		sleep(1);
+//		startTrace(child);
 	}
 }
