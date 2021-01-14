@@ -9,8 +9,6 @@
 /home/itrooz/moi/workspaces/CLion/Test/src/main.cpp
 sys/ptrace.h
 -
-sys/reg.h
--
 sys/wait.h
 -
 iostream

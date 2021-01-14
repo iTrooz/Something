@@ -1,5 +1,4 @@
 #include <sys/ptrace.h>
-#include <sys/reg.h>
 #include <sys/wait.h>
 #include<iostream>
 #include <cstdlib>
@@ -11,8 +10,7 @@ using namespace std;
 bool waitProcess(pid_t& stopped) {
 	int status;
 	while (true) {
-		fflush(stdout);
-		stopped = waitpid(stopped, &status, 0);
+		stopped = waitpid(-1, &status, __WALL);
 		if(stopped==-1){
 			exit(0);
 		}
@@ -31,53 +29,44 @@ bool waitProcess(pid_t& stopped) {
 
 void startTrace(pid_t mainProcess) { // TODO way to kill tracer ?
 
-	int temp;
+	long temp;
+	int stopped;
 
-	waitpid(mainProcess, &temp, 0);
-	temp = ptrace(PTRACE_SETOPTIONS, mainProcess, 0, PTRACE_O_TRACESYSGOOD | PTRACE_O_TRACEFORK | PTRACE_O_TRACECLONE);
+	waitpid(mainProcess, nullptr, 0);
+//	temp = ptrace(PTRACE_SETOPTIONS, mainProcess, 0, PTRACE_O_TRACESYSGOOD | PTRACE_O_TRACEFORK | PTRACE_O_TRACECLONE);
+	temp = ptrace(PTRACE_SETOPTIONS, mainProcess, 0, PTRACE_O_TRACESYSGOOD);
 	if (temp != 0)throw runtime_error("PTRACE_SETOPTIONS failed : " + to_string(temp));
 	temp = ptrace(PTRACE_SYSCALL, mainProcess, 0, 0); // restart le thread + l'arrête au prochain syscall
-	if (temp != 0)throw runtime_error("FIRST PTRACE_SYSCALL normal-failed : " +
-									  to_string(temp)); // TODO C'est normal si ca throw ici !! enlever throw
+	if (temp != 0)throw runtime_error("FIRST PTRACE_SYSCALL normal-failed : " + to_string(temp));
 
-	__ptrace_syscall_info info{};
-	user_regs_struct regs{};
+	__ptrace_syscall_info* info;
 	int size = sizeof(__ptrace_syscall_info);
-
+	int procs = 1;
 
 	while (true) {
-		if (waitProcess(mainProcess))break;
-		// entry
+//		cout << endl << "---CALL---" << endl;
+		if(waitProcess(stopped)){
+			cout << endl << "---BREAK---" << endl;
+			break;
+//			if(stopped==mainProcess)break;
+//			procs--;
+//			if(procs==0)break;
+//			else continue;
+		}
 
-//		info.op = PTRACE_SYSCALL_INFO_ENTRY;
-//		ptrace(PTRACE_GET_SYSCALL_INFO, mainProcess, size, &info);
-//		if(info.entry.nr==1){
-//			ptrace(PTRACE_GETREGS, mainProcess, 0, &regs);
-//			if(regs.rdi==1){
-//				regs.rdx -= 3;
-//				regs.rbx -= 3;
-//				ptrace(PTRACE_SETREGS, mainProcess, 0, &regs);
-//			}
+//		info = new __ptrace_syscall_info();
+//		ptrace(PTRACE_GET_SYSCALL_INFO, stopped, size, info);
+//		if(info->op==PTRACE_SYSCALL_INFO_ENTRY&& info->entry.nr == 56){
+//			procs++;
+//			cout << "CLONE" << endl;
 //		}
+//		delete info;
 
-		/*
-		 args[0] = pipe
-		 args[1] = pointer = rcx
-		 args[2] = size = rbx/rdx ?
-		 syscall id = orig_rax
-		 */
-
-
-		temp = ptrace(PTRACE_SYSCALL, mainProcess, 0, 0); // restart le thread + l'arrête au prochain syscall
-
-		if (waitProcess(mainProcess))break;
-		// exit
-
-		temp = ptrace(PTRACE_SYSCALL, mainProcess, 0, 0); // restart le thread + l'arrête au prochain syscall
+		ptrace(PTRACE_SYSCALL, stopped, 0, 0); // restart le thread + l'arrête au prochain syscall
 	}
-	cout << endl << "CHILD EXITED" << endl;
+	cout << endl << "---PROCESS DEAD---" << endl;
+	fflush(stdout);
 }
-
 
 int do_child(int argc, char **argv) {
 	char *args [argc+1];
@@ -87,8 +76,7 @@ int do_child(int argc, char **argv) {
 	args[argc] = NULL;
 
 	ptrace(PTRACE_TRACEME);
-//	kill(getpid(), SIGSTOP);
-	cout << "go" << endl;
+	kill(getpid(), SIGSTOP);
 	return execvp(args[0], args);
 }
 
@@ -104,7 +92,6 @@ int main(int argc, char **argv) {
 		cerr << "NOT SUPPOSED TO HAPPEN : PROCESS ESCAPED" << endl; // au cas ou
 		exit(1);
 	}else {
-		sleep(1);
-//		startTrace(child);
+		startTrace(child);
 	}
 }
