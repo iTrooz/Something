@@ -9,9 +9,7 @@
 /home/itrooz/moi/workspaces/CLion/Test/src/ministrace.c
 sys/ptrace.h
 -
-bits/types.h
--
-sys/user.h
+sys/reg.h
 -
 sys/wait.h
 -
@@ -25,16 +23,6 @@ stdio.h
 -
 errno.h
 -
-assert.h
--
 string.h
 -
-syscalls.h
-/home/itrooz/moi/workspaces/CLion/Test/src/syscalls.h
-syscallents.h
-/home/itrooz/moi/workspaces/CLion/Test/src/syscallents.h
-
-/home/itrooz/moi/workspaces/CLion/Test/src/syscallents.h
-
-/home/itrooz/moi/workspaces/CLion/Test/src/syscalls.h
 

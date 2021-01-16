@@ -3,26 +3,26 @@
 #include<iostream>
 #include <cstdlib>
 #include <unistd.h>
-#include <proc_service.h>
 
 using namespace std;
 
+// restart le thread + l'arrête au prochain syscall
+
 bool waitProcess(pid_t& stopped) {
-	int status;
+	int status; // TODO make static
 	while (true) {
-		stopped = waitpid(-1, &status, __WALL);
+		stopped = waitpid(-1, &status, __WALL); // wait4 ?
 		if(stopped==-1){
 			exit(0);
 		}
 
-		if (WIFSTOPPED(status) && WSTOPSIG(status) & 0x80){
-			return false;
-		}
-		if (WIFEXITED(status)){
-			return true;
-		}
-		status = ptrace(PTRACE_SYSCALL, stopped, 0, 0); // restart le thread + l'arrête au prochain syscall
-		if(status!=0)cerr << "failed wait_for_syscall : " << status << endl;
+		if (WIFSTOPPED(status) && WSTOPSIG(status) & 0x80) return false;
+		if (WIFEXITED(status)) return true;
+
+		// TODO ENVOYER LE SIGNAL DE EXIT AU PROCESS AVANT RETURN ? (seconde condition)
+		status = ptrace(PTRACE_SYSCALL, stopped, 0, WSTOPSIG(status));
+		if(status!=0)cerr << "failed PTRACE_SYSCALL waitProcess : " << status << endl;
+
 	}
 }
 
@@ -30,14 +30,13 @@ bool waitProcess(pid_t& stopped) {
 void startTrace(pid_t mainProcess) { // TODO way to kill tracer ?
 
 	long temp;
-	int stopped;
+	int stopped, status;
 
 	waitpid(mainProcess, nullptr, 0);
-//	temp = ptrace(PTRACE_SETOPTIONS, mainProcess, 0, PTRACE_O_TRACESYSGOOD | PTRACE_O_TRACEFORK | PTRACE_O_TRACECLONE);
-	temp = ptrace(PTRACE_SETOPTIONS, mainProcess, 0, PTRACE_O_TRACESYSGOOD);
+	temp = ptrace(PTRACE_SETOPTIONS, mainProcess, 0, PTRACE_O_TRACESYSGOOD|PTRACE_O_TRACEFORK|PTRACE_O_TRACEVFORK|PTRACE_O_TRACECLONE|PTRACE_O_TRACEEXEC|PTRACE_O_TRACEEXIT);
 	if (temp != 0)throw runtime_error("PTRACE_SETOPTIONS failed : " + to_string(temp));
-	temp = ptrace(PTRACE_SYSCALL, mainProcess, 0, 0); // restart le thread + l'arrête au prochain syscall
-	if (temp != 0)throw runtime_error("FIRST PTRACE_SYSCALL normal-failed : " + to_string(temp));
+	temp = ptrace(PTRACE_SYSCALL, mainProcess, 0, 0);
+	if (temp != 0)throw runtime_error("FIRST PTRACE_SYSCALL failed : " + to_string(temp));
 
 	__ptrace_syscall_info* info;
 	int size = sizeof(__ptrace_syscall_info);
@@ -46,12 +45,7 @@ void startTrace(pid_t mainProcess) { // TODO way to kill tracer ?
 	while (true) {
 //		cout << endl << "---CALL---" << endl;
 		if(waitProcess(stopped)){
-			cout << endl << "---BREAK---" << endl;
-			break;
-//			if(stopped==mainProcess)break;
-//			procs--;
-//			if(procs==0)break;
-//			else continue;
+			if(stopped==mainProcess)break;
 		}
 
 //		info = new __ptrace_syscall_info();
@@ -62,10 +56,10 @@ void startTrace(pid_t mainProcess) { // TODO way to kill tracer ?
 //		}
 //		delete info;
 
-		ptrace(PTRACE_SYSCALL, stopped, 0, 0); // restart le thread + l'arrête au prochain syscall
+
+		status = ptrace(PTRACE_SYSCALL, stopped, 0, 0);
+		if(status!=0)cerr << "failed PTRACE_SYSCALL mainLoop : " << status << endl;
 	}
-	cout << endl << "---PROCESS DEAD---" << endl;
-	fflush(stdout);
 }
 
 int do_child(int argc, char **argv) {

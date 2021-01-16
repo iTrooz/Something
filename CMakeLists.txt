@@ -3,6 +3,7 @@ project(Test)
 
 set(CMAKE_CXX_STANDARD 20)
 
+#file( GLOB SOURCES src/strace2.c)
 file( GLOB SOURCES src/main.cpp)
 add_executable(Test ${SOURCES})
 
